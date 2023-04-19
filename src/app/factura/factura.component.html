@@ -1,0 +1,54 @@
+<br><br><label for="idfactura">ID de la factura:</label>
+<input type="number" id="idfactura" name="idfactura" [(ngModel)]="factura.idfactura"><br>
+
+<label for="idcliente">ID del cliente:</label>
+<input type="number" id="idcliente" name="idcliente" [(ngModel)]="factura.idcliente"><br>
+
+<label for="totalfactura">Total de la factura:</label>
+<input type="number" id="totalfactura" name="totalfactura" [(ngModel)]="factura.totalfactura"><br>
+
+<label for="iva">IVA:</label>
+<input type="number" id="iva" name="iva" [(ngModel)]="factura.iva"><br>
+
+<input type="button" value="AÑADIR" (click)="anadir()">
+<br><br>
+<input type="number" id="iva" name="iva" [(ngModel)]="this.ids"><br>
+<input type="button" value="DELETE" (click)="delete()">
+<input type="button" value="UPDATE" (click)="update()">
+<table class="tabla-productos">
+
+  <tr class="encabezado">
+
+    <th>IDFACTURA</th>
+
+
+    <th>IDCLIENTE</th>
+
+
+    <th>TOTAL FACTURA</th>
+
+
+    <th>IVA</th>
+
+
+  </tr>
+  <ng-container *ngFor="let f of facturas">
+    <tr *ngIf=" ids==0 || ids==null || f.idfactura.toString().startsWith(ids.toString())">
+
+      <td>{{ f.idfactura }}</td>
+
+
+      <td>{{ f.idcliente }}</td>
+
+      <td>{{ f.totalfactura }}</td>
+
+      <td>{{ f.iva }}</td>
+
+    </tr>
+  </ng-container>
+</table>
+
+
+
+
+
